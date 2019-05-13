@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>Index</title>
+</head>
+<body ng-app="app" ng-controller="indexCtrl">
+<style type="text/css">
+	.cell{
+		display: inline-block;
+		width: 50px !important;
+		height: 50px !important;
+		padding: 10px;
+		border:1px solid #000;
+		/*color: #fff;*/
+		text-align: center;
+	}
+	.class-1x1{
+		background: red;
+	}
+	.class-2x1{
+		background: green;
+	}
+	.class-1x3{
+		background: blue
+	}
+	.class-3x4{
+		background: orange;
+	}
+</style>
+<div style="">
+	WALL
+	<div class="row" ng-repeat="k in wall">
+		<div class="cell class-{{y}}" ng-repeat="y in k">{{y}}</div>
+	</div>
+	<br>
+	BRICK<br><br>
+	<span>w</span>
+	<span>h</span>
+	<span>k</span>
+	<br>
+	<div class="row" ng-repeat="k in bricks">
+		<span>{{k.w}}</span>
+		<span>{{k.h}}</span>
+		<span>{{k.k}}</span>
+	</div>
+</div>
+
+<input type="text" ng-model="wall_size.w" placeholder="wall width">
+<input type="text" ng-model="wall_size.h" placeholder="wall height">
+<button ng-click="build()">Build</button>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="js/app/app.js"></script>  
+<script src="js/app/controller/index-ctrl.js"></script> 
+<script src="js/app/factory/factory-crud.js"></script>  
+</body>
+</html>
